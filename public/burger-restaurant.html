@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>مطعم برجر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>مطعم برجر</h1>
+    </header>
+    <section class="burger-options">
+        <button onclick="selectBurger('beef')" >
+            <img src="beef.jpg" alt="برجر لحم"style="width: 97px;height: 100px;">
+            <h3>برجر لحم</h3>
+        </button>
+        <button onclick="selectBurger('chicken')">
+            <img src="chicken.webp" alt="برجر دجاج" style="width: 97px;height: 100px;">
+            <h3>برجر دجاج</h3>
+        </button>
+    </section>
+    <footer>
+        <button onclick="navigateTo('home')">الصفحة الرئيسية</button>
+        <button onclick="navigateTo('orders')">الطلبات</button>
+        <button onclick="navigateTo('profile')">الصفحة الشخصية</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

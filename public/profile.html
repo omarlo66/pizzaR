@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البروفايل</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>البروفايل الشخصي</h1>
+    </header>
+    <div id="profile-container" class="profile">
+        <div class="profile-info">
+            <h2>المعلومات الشخصية</h2>
+            <div class="profile-image">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="الصورة الشخصية" style=" width: 50px; ">
+            </div>
+            <p><strong>الاسم:</strong> <span id="username"></span></p>
+            <p><strong>البريد الإلكتروني:</strong> <span id="email"></span></p>
+        </div>
+    </div>
+    <footer>
+        <button onclick="navigateTo('home')">الصفحة الرئيسية</button>
+        <button onclick="navigateTo('orders')">الطلبات</button>
+        <button onclick="navigateTo('profile')">الصفحة الشخصية</button>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // احضر بيانات المستخدم من الذاكرة المحلية أو من الخادم
+            const username = localStorage.getItem('username');
+            const email = localStorage.getItem('email');
+            
+            // قم بتحديث عناصر الصفحة ببيانات المستخدم
+            document.getElementById('username').textContent = username;
+            document.getElementById('email').textContent = email;
+        });
+    </script>
+</body>
+</html>

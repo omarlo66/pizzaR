@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>مطعم البيتزا</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>مطعم بيتزا</h1>
+    </header>
+    <section class="pizza-options">
+        <button onclick="selectPizza('vegetarian')">
+            <img src="./vegetarian.webp" alt="بيتزا بالخضار" style="width: 150px;">
+            <h3>بيتزا بالخضار</h3>
+        </button>
+        <button onclick="selectPizza('cheese')">
+            <img src="cheese.jpg" alt="بيتزا بالجبن">
+            <h3>بيتزا بالجبن</h3>
+        </button>
+    </section>
+    <footer>
+        <button onclick="navigateTo('home')">الصفحة الرئيسية</button>
+        <button onclick="navigateTo('orders')">الطلبات</button>
+        <button onclick="navigateTo('profile')">الصفحة الشخصية</button>
+    </footer>
+    <script>
+        function selectPizza(type) {
+            localStorage.setItem('selectedPizza', type);
+            window.location.href = 'pizza-details.html';
+        }
+        </script>
+    <script src="script.js"></script>
+</body>
+</html>

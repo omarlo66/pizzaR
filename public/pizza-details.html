@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل البيتزا</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>تفاصيل البيتزا</h1>
+    </header>
+    <div class="pizza-details">
+        <img id="pizzaImage" src="" alt="صورة البيتزا">
+        <h2 id="pizzaName">اسم البيتزا</h2>
+        
+
+        <form action="/order" id="" method="post">
+            <div class="options">
+                <label>
+                    <input type="radio" name="size" value="10" checked> صغير - $10
+                </label>
+                <label>
+                    <input type="radio" name="size" value="25"> متوسط - $25
+                </label>
+                <label>
+                    <input type="radio" name="size" value="30"> كبير - $30
+                </label>
+            </div>
+            <div class="total-price">
+                السعر الإجمالي: $<span id="totalPrice">20</span>
+            </div>
+
+            <input type="submit" value="إضافة إلى سلة الطلبات" name="addToCart" >
+        </form>
+
+
+
+
+        <!-- <button onclick="addToCart('Pizza', document.getElementById('pizzaName').textContent)">إضافة إلى سلة الطلبات</button> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

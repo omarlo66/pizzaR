@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل البرجر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>تفاصيل البرجر</h1>
+    </header>
+    <div class="burger-details">
+        <img id="burgerImage" src="" alt="صورة البرجر">
+        <h2 id="burgerName">اسم البرجر</h2>
+        <div class="options">
+            <label>
+                <input type="checkbox" name="ketchup" value="-2" onchange="updateTotalPrice(this)"> كاتشب -$2
+            </label>
+            <label>
+                <input type="checkbox" name="mayo" value="-2" onchange="updateTotalPrice(this)"> مايونيز -$2
+            </label>
+            <label>
+                <input type="checkbox" name="onion" value="-3" onchange="updateTotalPrice(this)"> بصل -$3
+            </label>
+        </div>
+        <div class="total-price">
+            السعر العام: $30 <br>
+            السعر الإجمالي: $<span id="totalPrice">30</span>
+        </div>
+        <button onclick="addToCart('Burger', document.getElementById('burgerName').textContent)">إضافة إلى سلة الطلبات</button>
+    </div>
+    <!-- <script >
+        function updateTotalPrice(checkbox) {
+            let totalPrice = 30; // السعر الأساسي
+        
+            const ketchupOption = document.querySelector('input[name="ketchup"]');
+            const mayoOption = document.querySelector('input[name="mayo"]');
+            const onionOption = document.querySelector('input[name="onion"]');
+        
+            if (ketchupOption && ketchupOption.checked) totalPrice += parseInt(ketchupOption.value);
+            if (mayoOption && mayoOption.checked) totalPrice += parseInt(mayoOption.value);
+            if (onionOption && onionOption.checked) totalPrice += parseInt(onionOption.value);
+        
+            document.getElementById('totalPrice').textContent = totalPrice;
+        }
+    </script> -->
+    <script src="script.js"></script>
+</body>
+</html>
