@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <title>تفاصيل البيتزا</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
     <header>
         <h1>تفاصيل البيتزا</h1>
     </header>
     <div class="pizza-details">
-        <img id="pizzaImage" src="" alt="صورة البيتزا">
+        <img id="pizzaImage" src="/beef.jpg" alt="صورة البيتزا">
         <h2 id="pizzaName">اسم البيتزا</h2>
         
 
-        <form action="/order" id="" method="post">
+        <form action="/order" id="order_form" method="post">
+            <input type="hidden" name="name" value="Pizza">
+            <input type="hidden" name="user_id" id="user_id" value="1">
             <div class="options">
                 <label>
                     <input type="radio" name="size" value="10" checked> صغير - $10
@@ -29,15 +33,37 @@
             <div class="total-price">
                 السعر الإجمالي: $<span id="totalPrice">20</span>
             </div>
-
+            <input type="hidden" name="type" value="pizza">
             <input type="submit" value="إضافة إلى سلة الطلبات" name="addToCart" >
         </form>
-
-
-
 
         <!-- <button onclick="addToCart('Pizza', document.getElementById('pizzaName').textContent)">إضافة إلى سلة الطلبات</button> -->
     </div>
     <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        $('#order_form').submit(function(e) {
+            e.preventDefault();
+            let data = {name: 'Pizza',
+                    size: $('input[name="size"]:checked').val(),
+                    price: $('input[name="size"]:checked').val(),
+                    type: 'pizza',
+                    userId: $('#user_id').val()
+                };
+            $.ajax({
+                type: 'POST',
+                url: '/order',
+                data: data,
+                success: function(response) {
+                    console.log(response);
+                    $('#order_form').fadeOut(300);
+                    $('#pizzaImage').after('<h3 style="color: green; padding: 10px;">تم أضافة الطلب بنجاح</h3>').fadeIn(300);
+                    setTimeout(function() {
+                        window.location.href = 'orders.html';
+                    }, 3000);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
